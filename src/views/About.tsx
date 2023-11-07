@@ -1,10 +1,5 @@
-const About = () => {
-  return (
-    <div>
-      <h1>About</h1>
-      <p>This is a simple app to demonstrate the use of React Hooks.</p>
-    </div>
-  );
-};
+function About() {
+  return <div>About me.</div>;
+}
 
 export default About;

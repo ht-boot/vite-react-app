@@ -1,9 +1,17 @@
-import Home from "../views/Home";
+import { lazy } from "react";
+
+// 不需要懒加载的页面组件
+import Home from "../views/home/Home";
 import Layout from "../views/layout/layout";
-import About from "@/views/About";
+// import About from "@/views/About";
 import NotFind from "../views/404";
 
+// 需要懒加载的页面组件
+const About = lazy(() => import("@/views/About"));
+
 import { RouteObject } from "react-router-dom";
+
+// const modules = import.meta.glob("@/views/**/*.tsx");
 
 const routers: RouteObject[] = [
   {
@@ -12,7 +20,7 @@ const routers: RouteObject[] = [
     // 向Vue一样创建children放置页面
     children: [
       {
-        index: true,
+        path: "/",
         element: <Home />,
       },
       {
