@@ -8,6 +8,7 @@ import NotFind from "../views/404";
 
 // 需要懒加载的页面组件
 const About = lazy(() => import("@/views/About"));
+const Login = lazy(() => import("@/views/login/Login"));
 
 import { RouteObject } from "react-router-dom";
 
@@ -28,6 +29,10 @@ const routers: RouteObject[] = [
         element: <About />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/*",
